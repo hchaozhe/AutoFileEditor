@@ -22,7 +22,11 @@ for i=1:length(lines)
  Content{lines(i)}=contents{i};   
 end
 % Write cell content into txt
+if isempty(Content{end-1})
+Content(end-1)=[];      
+end
 fid = fopen(file, 'w+');  % discard and rewrite
 fprintf(fid, '%s\n', Content{:});
+
 fclose(fid);
 end

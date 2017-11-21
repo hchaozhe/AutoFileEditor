@@ -5,9 +5,11 @@ clear all; clc;close all
 % fclose(fid);
 
 %% 
-% Read txt into cell A
-% filename='test_func.m';
-% AutoEditor(filename,[6],{'dx=cos(x*y*z)*(n+m+p);'});
+for i=1:20
+filename='test_func.m';
+AutoEditor(filename,[6],{['dx=cos(x*y*z)*(n+m+p)+',num2str(i),';']});
+i
+end
 %% Test on a large file
 % filename='C:\Users\hchaozhe\Documents\TruckSim\TruckFeedData\Sfunctions\MPC_ipopt_slack.m';
 % dT=0.01;
